@@ -111,13 +111,13 @@ class Circle extends Shape {
 }
 ```
 
-**Interface vs. abstract class** (a very common SAP question): an **interface** is a fully abstract contract — traditionally no implementation at all (Java 8+ allows `default` methods, but the core idea is "what must be done," not "how"). An **abstract class** can mix abstract methods with real, working ones, and hold state (fields). Use an interface when unrelated classes need to guarantee the same behavior (e.g., `Comparable`); use an abstract class when related classes share common code, not just a shared contract.
-
 ### Access Modifiers
 `public` (visible everywhere) · `private` (only inside the same class) · `protected` (same package + subclasses) · default/package-private (same package only, no keyword written).
 
 ### Constructors, `this`, and `static`
 A constructor initializes a new object; Java calls it automatically with `new`. `this` refers to the current object (commonly used to distinguish a field from a parameter with the same name). `static` members belong to the class itself, not any one instance — shared across every object.
+
+**Interface vs. abstract class** (a very common SAP question): an **interface** is a fully abstract contract — traditionally no implementation at all (Java 8+ allows `default` methods, but the core idea is "what must be done," not "how"). An **abstract class** can mix abstract methods with real, working ones, and hold state (fields). Use an interface when unrelated classes need to guarantee the same behavior (e.g., `Comparable`); use an abstract class when related classes share common code, not just a shared contract.
 
 Interface vs. Abstract class
 Forget the comparison table I gave you — let's use real, tiny code instead, because reading actual behavior is much clearer than a list of properties.
