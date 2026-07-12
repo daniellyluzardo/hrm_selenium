@@ -119,6 +119,38 @@ class Circle extends Shape {
 ### Constructors, `this`, and `static`
 A constructor initializes a new object; Java calls it automatically with `new`. `this` refers to the current object (commonly used to distinguish a field from a parameter with the same name). `static` members belong to the class itself, not any one instance — shared across every object.
 
+Interface vs. Abstract class
+Forget the comparison table I gave you — let's use real, tiny code instead, because reading actual behavior is much clearer than a list of properties.
+Interface — a checklist with zero actual work done:
+```java
+javainterface Animal {
+void makeSound();   // just a requirement: "you must have this," no actual code
+}
+
+class Dog implements Animal {
+public void makeSound() {
+System.out.println("Woof!");   // Dog actually writes the real behavior
+}
+}
+Animal by itself can't do anything — it never says HOW to make a sound, only that something else must. You could never write new Animal() — Java refuses, because there's no real behavior there to run. Dog is where the real, working code lives.
+Abstract class — partly-done work, with specific blanks left on purpose:
+javaabstract class Animal {
+void breathe() {
+System.out.println("Breathing...");  // fully written — every animal does this the same way
+}
+abstract void makeSound();  // left blank on purpose — every animal is different here
+}
+
+class Dog extends Animal {
+void makeSound() {
+System.out.println("Woof!");
+}
+}
+```
+
+The difference you can actually see: abstract class Animal already has one fully working method (breathe()) that Dog gets automatically, for free, with zero extra code — plus one deliberately blank spot (makeSound()) that Dog must fill in. The interface version had nothing pre-written; the abstract class version has some things pre-written and some left blank.
+Tie back to your actual project: WebDriver is an interface — pure checklist ("must be able to .get(), .click()," etc.), with zero real code behind it. You could never write new WebDriver(). ChromeDriver is the real class that says "yes, I follow that checklist," and writes actual working code for every single item on it. That's why new ChromeDriver() works, but new WebDriver() never would.
+
 ```java
 public class Employee {
     String name;
