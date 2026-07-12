@@ -212,18 +212,6 @@ Map<String, Integer> retryCount = new HashMap<>();
 retryCount.put("testLogin", 2);
 ```
 
-### Practice Coding Problems (write these yourself, don't just read them)
-1. Reverse a string without using `.reverse()`
-2. Check if a string is a palindrome
-3. Find duplicate elements in an array
-4. Find the second-largest number in an array
-5. Count vowels and consonants in a string
-6. Check if two strings are anagrams
-7. Swap two numbers without a third variable
-8. Print the first N Fibonacci numbers
-9. Count the frequency of each character using a `HashMap`
-10. Check if a number is prime
-
 ### Day 1 Self-Check
 - Can you explain all four OOP pillars with your own examples, not the ones above?
 - Can you explain interface vs. abstract class without just saying "interface has no body"?
@@ -314,24 +302,6 @@ FileUtils.copyFile(src, new File("screenshot.png"));
 - **ElementNotInteractableException** — element exists in the DOM but isn't visible/enabled yet
 - **StaleElementReferenceException** — the element was found, but the page re-rendered afterward, so that reference no longer points to anything real — re-find it
 - **TimeoutException** — an explicit wait's condition never became true in time
-
-### Hands-On Practice Scenarios (do these — don't just read about them)
-
-Free, purpose-built practice sites:
-- **saucedemo.com** — login flow + e-commerce checkout, great for an end-to-end scenario
-- **the-internet.herokuapp.com** — a dedicated page for almost every concept above: dropdowns, JS alerts, iframes, multiple windows, file upload, drag-and-drop, dynamically loading content
-- **demoqa.com** — forms, widgets, date pickers, tabs
-
-Scenarios to actually build:
-1. Automate login with valid *and* invalid credentials; assert the right outcome for each
-2. Select a dropdown option and verify it stuck
-3. Trigger and handle a JS alert (accept and dismiss versions)
-4. Open a new tab/window, switch to it, extract text, switch back
-5. Interact with an element inside an iframe
-6. Automate a drag-and-drop
-7. Upload a file and verify the success message
-8. Wait for content that loads dynamically after a delay (practice explicit wait, not `Thread.sleep()`)
-9. Chain a full flow: login → add item to cart → checkout → verify confirmation message
 
 ### Day 2 Self-Check
 - Explain implicit vs. explicit vs. fluent wait to someone who's never heard of them
